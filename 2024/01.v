@@ -6,7 +6,7 @@ fn get_lists() ([]int, []int) {
 	mut left_list := []int{}
 	mut right_list := []int{}
 
-	text := os.read_file('2024/01.txt') or {
+	text := os.read_file('2024/01.input') or {
 		eprintln('Cannot open file: ${err}')
 		exit(1)
 	}

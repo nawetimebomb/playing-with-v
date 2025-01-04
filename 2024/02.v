@@ -11,12 +11,13 @@ const test_data = [
 	[1, 3, 2, 4, 5],
 	[8, 6, 4, 4, 1],
 	[1, 3, 6, 7, 9],
+	[43, 41, 43, 44, 45, 47, 49],
 ]
 
 fn get_reports() [][]int {
 	mut reports := [][]int{}
 
-	text := os.read_file('2024/02.txt') or {
+	text := os.read_file('2024/02.input') or {
 		eprintln('Error reading file ${err}')
 		exit(1)
 	}
@@ -69,7 +70,7 @@ fn is_safe(report []int) bool {
 	return true
 }
 
-fn find_first_unsafe_index(report []int) int {
+fn find_last_unsafe_index(report []int) int {
 	expected_sign := math.signi(report[1] - report[0])
 
 	for i := 1; i < report.len; i += 1 {
@@ -78,11 +79,11 @@ fn find_first_unsafe_index(report []int) int {
 		delta := b - a
 
 		if math.signi(delta) != expected_sign {
-			return i - 1
+			return i
 		}
 
 		if delta == 0 || delta < -3 || delta > 3 {
-			return i - 1
+			return i
 		}
 	}
 
@@ -90,12 +91,18 @@ fn find_first_unsafe_index(report []int) int {
 }
 
 fn is_safe_with_dampener(report []int) bool {
-	unsafe_index := find_first_unsafe_index(report)
+	unsafe_index := find_last_unsafe_index(report)
 
-	if unsafe_index >= 0 {
-		mut new_report := report.clone()
-		new_report.delete(unsafe_index)
-		return is_safe(new_report)
+	if unsafe_index != -1 {
+		mut new_report1 := report.clone()
+		mut new_report2 := report.clone()
+		mut new_report3 := report.clone()
+
+		new_report1.delete(unsafe_index - 1)
+		new_report2.delete(unsafe_index)
+		new_report3.delete(0)
+
+		return is_safe(new_report1) || is_safe(new_report2) || is_safe(new_report3)
 	}
 
 	return true
