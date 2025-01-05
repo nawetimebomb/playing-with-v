@@ -27,21 +27,27 @@ fn main() {
 	main_file.writeln('fn main() {')!
 
 	for i := 1; i <= 25; i += 1 {
-		mut file := directory
+		mut filename := directory
 		day_number_str := i.str()
 
 		if i < 10 {
-			file += '0' + day_number_str
+			filename += '0' + day_number_str
 		} else {
-			file += day_number_str
+			filename += day_number_str
 		}
 
-		file += '.v'
+		vfile := '${filename}.v'
+		ifile := '${filename}.input'
 
 		main_file.writeln('    day${day_number_str}()')!
 
-		if !os.exists(file) {
-			mut f := os.create(file)!
+		if !os.exists(ifile) {
+			mut ifv := os.create(ifile)!
+			ifv.close()
+		}
+
+		if !os.exists(vfile) {
+			mut f := os.create(vfile)!
 
 			f.writeln('module main')!
 			f.writeln('')!
@@ -63,7 +69,7 @@ fn main() {
 			f.flush()
 			f.close()
 
-			println('File ${file} created')
+			println('File ${filename} created')
 		}
 	}
 
