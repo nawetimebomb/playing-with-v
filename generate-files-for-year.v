@@ -1,3 +1,5 @@
+// Run this with `v run generate-files-for-year <year>`
+
 module main
 
 import os
