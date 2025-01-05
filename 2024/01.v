@@ -2,7 +2,7 @@ module main
 
 import os
 
-fn get_lists() ([]int, []int) {
+fn d1_get_data() ([]int, []int) {
 	mut left_list := []int{}
 	mut right_list := []int{}
 
@@ -25,7 +25,7 @@ fn get_lists() ([]int, []int) {
 }
 
 fn d1p1() int {
-	mut left_list, mut right_list := get_lists()
+	mut left_list, mut right_list := d1_get_data()
 	mut total_distance := 0
 
 	left_list.sort(a > b)
@@ -49,7 +49,7 @@ fn d1p1() int {
 }
 
 fn d1p2() int {
-	mut left_list, mut right_list := get_lists()
+	mut left_list, mut right_list := d1_get_data()
 	mut similarity_score := 0
 
 	for id in left_list {

@@ -4,7 +4,7 @@ import math
 import os
 import strconv
 
-const test_data = [
+const d2_test_data = [
 	[7, 6, 4, 2, 1],
 	[1, 2, 7, 8, 9],
 	[9, 7, 6, 2, 1],
@@ -14,7 +14,7 @@ const test_data = [
 	[43, 41, 43, 44, 45, 47, 49],
 ]
 
-fn get_reports() [][]int {
+fn d2_get_data() [][]int {
 	mut reports := [][]int{}
 
 	text := os.read_file('2024/02.input') or {
@@ -109,7 +109,7 @@ fn is_safe_with_dampener(report []int) bool {
 }
 
 fn d2p1() int {
-	reports := get_reports()
+	reports := d2_get_data()
 	mut safe_reports := 0
 
 	for report in reports {
@@ -122,7 +122,7 @@ fn d2p1() int {
 }
 
 fn d2p2() int {
-	reports := get_reports()
+	reports := d2_get_data()
 	mut safe_reports := 0
 
 	for report in reports {
