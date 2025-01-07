@@ -134,7 +134,7 @@ fn d2p2() int {
 	return safe_reports
 }
 
-fn day2() {
+fn main() {
 	println('/=== Day 2 ===/')
 	println('\t- part 1: ${d2p1()}')
 	println('\t- part 2: ${d2p2()}')

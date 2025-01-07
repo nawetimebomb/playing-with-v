@@ -60,7 +60,7 @@ fn d1p2() int {
 	return similarity_score
 }
 
-fn day1() {
+fn main() {
 	println('/=== Day 1 ===/')
 	println('\t- part 1: ${d1p1()}')
 	println('\t- part 2: ${d1p2()}')

@@ -1,15 +1,15 @@
 module main
 
-fn d19p1() int {
+fn part1() int {
     return 0
 }
 
-fn d19p2() int {
+fn part2() int {
     return 0
 }
 
-fn day19() {
+fn main() {
     println('/=== Day 19 ===/')
-    println('	- part 1: ${d19p1()}')
-    println('	- part 2: ${d19p2()}')
+    println('	- part 1: ${part1()}')
+    println('	- part 2: ${part2()}')
 }

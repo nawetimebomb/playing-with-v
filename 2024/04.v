@@ -125,7 +125,7 @@ fn d4p2() int {
 	return count
 }
 
-fn day4() {
+fn main() {
 	println('/=== Day 4 ===/')
 	println('	- part 1: ${d4p1()}')
 	println('	- part 2: ${d4p2()}')

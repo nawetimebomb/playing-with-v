@@ -100,7 +100,7 @@ fn d3p2() int {
 	return result
 }
 
-fn day3() {
+fn main() {
 	println('/=== Day 3 ===/')
 	println('\t- part 1: ${d3p1()}')
 	println('\t- part 2: ${d3p2()}')

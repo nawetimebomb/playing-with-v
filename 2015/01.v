@@ -35,11 +35,7 @@ fn d1_get_result() (int, int) {
 	return current_floor, first_time_basement
 }
 
-fn d1p2() int {
-	return 0
-}
-
-fn day1() {
+fn main() {
 	current_floor, first_time_basement := d1_get_result()
 
 	println('/=== Day 1 ===/')

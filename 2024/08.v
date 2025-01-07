@@ -1,15 +1,15 @@
 module main
 
-fn d8p1() int {
+fn part1() int {
     return 0
 }
 
-fn d8p2() int {
+fn part2() int {
     return 0
 }
 
-fn day8() {
+fn main() {
     println('/=== Day 8 ===/')
-    println('	- part 1: ${d8p1()}')
-    println('	- part 2: ${d8p2()}')
+    println('	- part 1: ${part1()}')
+    println('	- part 2: ${part2()}')
 }

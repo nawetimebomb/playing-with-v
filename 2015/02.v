@@ -1,5 +1,4 @@
 // https://adventofcode.com/2015/day/2
-// 2*l*w + 2*w*h + 2*h*l
 
 module main
 
@@ -76,7 +75,7 @@ fn d2p1p2() (int, int) {
 	return total_wrap_square_feet, ribbon_feet
 }
 
-fn day2() {
+fn main() {
 	part_1, part_2 := d2p1p2()
 	println('/=== Day 2 ===/')
 	println('	- part 1: ${part_1}')
